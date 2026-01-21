@@ -29,22 +29,22 @@ Built with **React + Vite + Tailwind CSS**, this project demonstrates clean comp
 
 ## 📂 Project Structure
 
-focusflow-landing/
-├── src/
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── Hero.jsx
-│ │ ├── Why.jsx
-│ │ ├── Pricing.jsx
-│ │ ├── CTA.jsx
-│ │ └── Footer.jsx
-│ ├── App.jsx
-│ ├── main.jsx
-│ └── tailwind.css
-├── index.html
-├── vite.config.js
-├── tailwind.config.js
-└── README.md
+focusflow-landing/  
+├── src/  
+│   ├── components/  
+│   │   ├── Navbar.jsx  
+│   │   ├── Hero.jsx  
+│   │   ├── Why.jsx  
+│   │   ├── Pricing.jsx  
+│   │   ├── CTA.jsx  
+│   │   └── Footer.jsx  
+│   ├── App.jsx  
+│   ├── main.jsx  
+│   └── tailwind.css  
+├── index.html  
+├── vite.config.js  
+├── tailwind.config.js  
+└── README.md  
 
 ---
 
@@ -58,30 +58,31 @@ focusflow-landing/
 
 Clone the repository and run locally:
 
-```bash
-git clone https://github.com/your-username/focusflow-landing.git
-cd focusflow-landing
-npm install
-npm run dev
+git clone https://github.com/your-username/focusflow-landing.git  
+cd focusflow-landing  
+npm install  
+npm run dev  
 
-📌 What I Learned
+---
 
-Structuring a React app using reusable components
+## 📌 What I Learned
 
-Styling layouts with Tailwind CSS
+- Structuring a React app using reusable components  
+- Styling layouts with Tailwind CSS  
+- Building a responsive landing page UI  
+- Configuring Vite + Tailwind properly  
+- Deploying frontend apps with Vercel  
 
-Building a responsive landing page UI
+---
 
-Configuring Vite + Tailwind properly
+## 👤 Author
 
-Deploying frontend apps with Vercel
+**Muhammad Furqan Maulidi**  
+Informatics Student @ Telkom University  
+Frontend Developer Enthusiast  
 
-👤 Author
+---
 
-Muhammad Furqan Maulidi
-Informatics Student @ Telkom University
-Frontend Developer Enthusiast
+## 📄 License
 
-📄 License
-
-This project is open-source and free to use for learning purposes.
+This project is open-source and free to use for learning and portfolio purposes.
