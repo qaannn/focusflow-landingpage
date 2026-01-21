@@ -1,16 +1,87 @@
-# React + Vite
+# 🚀 FocusFlow — Productivity Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FocusFlow is a modern and responsive landing page for a productivity app that helps users stay focused, track time, and boost daily efficiency.
 
-Currently, two official plugins are available:
+Built with **React + Vite + Tailwind CSS**, this project demonstrates clean component architecture, modern UI design, and production-ready frontend practices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🧭 Sticky responsive navbar  
+- 🎯 Hero section with clear value proposition  
+- 💡 Why FocusFlow (features highlight)  
+- 💳 Pricing section (Free & Pro plans)  
+- 📣 Call-to-action (CTA) section  
+- 🦶 Clean and minimal footer  
+- 📱 Fully responsive design  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- **React** — UI library  
+- **Vite** — Fast build tool  
+- **Tailwind CSS** — Utility-first CSS framework  
+- **JavaScript (ES6+)**
+
+---
+
+## 📂 Project Structure
+
+focusflow-landing/
+├── src/
+│ ├── components/
+│ │ ├── Navbar.jsx
+│ │ ├── Hero.jsx
+│ │ ├── Why.jsx
+│ │ ├── Pricing.jsx
+│ │ ├── CTA.jsx
+│ │ └── Footer.jsx
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── tailwind.css
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+└── README.md
+
+---
+
+## 🌍 Live Demo
+
+👉 https://focusflow-landingpage.vercel.app/
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository and run locally:
+
+```bash
+git clone https://github.com/your-username/focusflow-landing.git
+cd focusflow-landing
+npm install
+npm run dev
+
+📌 What I Learned
+
+Structuring a React app using reusable components
+
+Styling layouts with Tailwind CSS
+
+Building a responsive landing page UI
+
+Configuring Vite + Tailwind properly
+
+Deploying frontend apps with Vercel
+
+👤 Author
+
+Muhammad Furqan Maulidi
+Informatics Student @ Telkom University
+Frontend Developer Enthusiast
+
+📄 License
+
+This project is open-source and free to use for learning purposes.
