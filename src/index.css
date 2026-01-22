@@ -9,3 +9,433 @@ html {
 * {
   scroll-behavior: smooth !important;
 }
+
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Scroll reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animated toggle button */
+.theme-toggle {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.theme-toggle span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.theme-toggle .sun {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.theme-toggle .moon {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.dark .theme-toggle .sun {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.dark .theme-toggle .moon {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #2563eb,
+    #6366f1,
+    #22c55e,
+    #2563eb
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-glow {
+  text-shadow: 0 0 30px rgba(37, 99, 235, 0.25);
+}
+
+/* Floating background blobs */
+@keyframes floatSlow {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(80px, -60px) scale(1.08);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-90px, 70px) scale(1.1);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.float-blob-1 {
+  animation: floatSlow 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+.float-blob-2 {
+  animation: floatSlowReverse 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(59, 130, 246, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.cta-glow {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Scroll reveal base */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pricing card glow */
+.pricing-glow {
+  position: relative;
+}
+
+.pricing-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: linear-gradient(
+    120deg,
+    #2563eb,
+    #6366f1,
+    #22c55e,
+    #2563eb
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.pricing-glow:hover::before {
+  opacity: 1;
+  filter: blur(12px);
+}
+
+@keyframes badgePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.badge-pulse {
+  animation: badgePulse 3s infinite;
+}
+
+/* CTA animated gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.cta-gradient {
+  background: linear-gradient(
+    120deg,
+    #2563eb,
+    #22c55e,
+    #6366f1,
+    #2563eb
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* CTA glow ring */
+.cta-glow {
+  position: relative;
+}
+
+.cta-glow::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    120deg,
+    #22c55e,
+    #2563eb,
+    #6366f1,
+    #22c55e
+  );
+  z-index: -1;
+  filter: blur(14px);
+  opacity: 0.7;
+}
+
+/* CTA button hover pop */
+.cta-button {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* === Section Reveal Animation === */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* === Stagger Animation for Cards === */
+.reveal-stagger {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-stagger-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* === Cursor glow effect === */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(59, 130, 246, 0.15),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+/* === Animated gradient button === */
+.gradient-btn {
+  background: linear-gradient(120deg, #2563eb, #4f46e5, #2563eb);
+  background-size: 200% 200%;
+  transition: background-position 0.6s ease, transform 0.2s ease;
+}
+
+.gradient-btn:hover {
+  background-position: 100% 50%;
+}
+
+/* === Card depth tilt illusion === */
+.depth-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.depth-card:hover {
+  transform: perspective(800px) translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* === Allow badge to escape pricing card === */
+.pricing-glow {
+  overflow: visible !important;
+}
+
+/* === Pricing card subtle lift === */
+.pricing-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-glow:hover::before {
+  opacity: 1;
+  filter: blur(8px); /* sebelumnya 12px */
+}
+
+/* === Pricing button pop === */
+.pricing-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+@keyframes badgePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.reveal-stagger {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInSoft 0.35s ease;
+}
+
+/* === Price fade + slide === */
+@keyframes priceIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-priceIn {
+  animation: priceIn 0.35s ease;
+}
+
+/* === CTA pulse when yearly active === */
+@keyframes ctaPulseSoft {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.animate-ctaPulse {
+  animation: ctaPulseSoft 2.4s infinite;
+}

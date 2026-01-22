@@ -1,74 +1,86 @@
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-32">
-      {/* Background gradient blur */}
-      <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-3xl"></div>
+    <section
+      id="hero"
+      className="reveal relative overflow-hidden bg-white dark:bg-gray-950"
+    >
+      {/* Background blobs */}
+      <div className="pointer-events-none absolute top-0 left-0 w-[420px] h-[420px] bg-blue-500/20 rounded-full blur-3xl float-blob-1"></div>
+      <div className="pointer-events-none absolute bottom-0 right-0 w-[420px] h-[420px] bg-indigo-500/20 rounded-full blur-3xl float-blob-2"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-28 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* LEFT: TEXT */}
-        <div>
-          <span className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium">
-            🚀 Productivity App
-          </span>
+      {/* Content wrapper — controls height */}
+      <div className="relative z-10 min-h-screen flex items-center">
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* LEFT */}
+          <div>
+            <span className="inline-block mb-4 px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-sm font-medium">
+              🚀 Productivity App
+            </span>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-            Stay Focused. <br />
-            Get More Done <br />
-            with <span className="text-blue-600">FocusFlow</span>
-          </h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 dark:text-white">
+              Stay Focused. <br />
+              Get More Done <br />
+              with <span className="gradient-text">FocusFlow</span>
+            </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
-            FocusFlow helps you block distractions, manage tasks,
-            and build deep work habits so you can achieve more every day.
-          </p>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+              FocusFlow helps you block distractions, manage tasks,
+              and build deep work habits so you can achieve more every day.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition transform hover:scale-105 active:scale-95">
-              Get Started Free
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="gradient-btn px-10 py-4 rounded-xl text-white font-bold transition transform hover:scale-105 active:scale-95">
+                Get Started Free
+              </button>
 
-            <button className="px-8 py-4 rounded-xl border border-gray-300 text-gray-800 font-semibold hover:bg-gray-100 transition transform hover:scale-105 active:scale-95">
-              View Demo
-            </button>
+              <button className="group relative px-10 py-4 rounded-xl border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold overflow-hidden transition transform hover:-translate-y-1 hover:shadow-lg active:scale-95">
+                <span className="relative z-10">View Demo</span>
+                <span className="absolute inset-0 bg-gray-100 dark:bg-gray-800 opacity-0 group-hover:opacity-100 transition"></span>
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* RIGHT: MOCKUP CARD */}
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur-xl opacity-30"></div>
+          {/* RIGHT MOCKUP */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur-xl opacity-30"></div>
 
-          <div className="relative bg-white rounded-3xl shadow-2xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <p className="text-sm text-gray-500">Today’s Focus</p>
-                <p className="text-xl font-bold">Deep Work Session</p>
+            <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-8">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Today’s Focus
+                  </p>
+                  <p className="text-xl font-bold dark:text-white">
+                    Deep Work Session
+                  </p>
+                </div>
+                <span className="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
+                  Active
+                </span>
               </div>
-              <span className="px-3 py-1 text-sm rounded-full bg-green-100 text-green-700">
-                Active
-              </span>
+
+              <div className="space-y-4">
+                {[
+                  ['Design Landing Page', '25 min'],
+                  ['Fix Tailwind Config', '15 min'],
+                  ['Write GitHub README', '10 min'],
+                ].map(([task, time]) => (
+                  <div
+                    key={task}
+                    className="p-4 rounded-xl bg-gray-50 dark:bg-gray-800 flex items-center justify-between"
+                  >
+                    <span className="dark:text-gray-200">{task}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {time}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <button className="mt-6 w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition transform hover:scale-105 active:scale-95">
+                Start Focus Session
+              </button>
             </div>
-
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-between">
-                <span>Design Landing Page</span>
-                <span className="text-sm text-gray-500">25 min</span>
-              </div>
-
-              <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-between">
-                <span>Fix Tailwind Config</span>
-                <span className="text-sm text-gray-500">15 min</span>
-              </div>
-
-              <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-between">
-                <span>Write GitHub README</span>
-                <span className="text-sm text-gray-500">10 min</span>
-              </div>
-            </div>
-
-            <button className="mt-6 w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition transform hover:scale-105 active:scale-95">
-              Start Focus Session
-            </button>
           </div>
         </div>
       </div>

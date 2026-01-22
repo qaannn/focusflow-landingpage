@@ -1,58 +1,55 @@
+import { handleGlow } from '../utils/glow'
+
+const features = [
+  {
+    icon: '🎯',
+    title: 'Block Distractions',
+    desc: 'Eliminate notifications and distracting websites so you can focus deeply on what really matters.',
+  },
+  {
+    icon: '⏱️',
+    title: 'Smart Time Tracking',
+    desc: 'Track how you spend your time and discover patterns to optimize your daily productivity.',
+  },
+  {
+    icon: '📊',
+    title: 'Productivity Insights',
+    desc: 'Get clear insights and weekly reports to continuously improve your work habits.',
+  },
+]
+
 export default function Why() {
   return (
-    <section id="features" className="py-24 bg-gray-50">
+    <section id="features" className="reveal py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold mb-4">
-            Why <span className="text-blue-600">FocusFlow</span>?
+          <h2 className="text-4xl font-extrabold mb-4 dark:text-white">
+            Why <span className="text-blue-600 dark:text-blue-400">FocusFlow</span>?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Everything you need to stay focused, productive,
             and in control of your time.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
-            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 mb-6 text-2xl">
-              🎯
+          {features.map((f, i) => (
+            <div
+              key={i}
+              onMouseMove={handleGlow}
+              className="glow-card depth-card reveal-stagger bg-white dark:bg-gray-800 p-8 rounded-2xl border transition-all hover:-translate-y-2 hover:shadow-xl"
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
+              <div className="text-4xl mb-4">{f.icon}</div>
+              <h3 className="text-xl font-bold mb-2 dark:text-white">
+                {f.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                {f.desc}
+              </p>
             </div>
-            <h3 className="text-xl font-bold mb-3">
-              Block Distractions
-            </h3>
-            <p className="text-gray-600">
-              Eliminate notifications and distracting websites
-              so you can focus deeply on what really matters.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
-            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 mb-6 text-2xl">
-              ⏱️
-            </div>
-            <h3 className="text-xl font-bold mb-3">
-              Smart Time Tracking
-            </h3>
-            <p className="text-gray-600">
-              Track how you spend your time and discover
-              patterns to optimize your daily productivity.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
-            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-green-100 text-green-600 mb-6 text-2xl">
-              📊
-            </div>
-            <h3 className="text-xl font-bold mb-3">
-              Productivity Insights
-            </h3>
-            <p className="text-gray-600">
-              Get clear insights and weekly reports
-              to continuously improve your work habits.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
