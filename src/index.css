@@ -439,3 +439,23 @@ button:active {
 .animate-ctaPulse {
   animation: ctaPulseSoft 2.4s infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* tinggi navbar */
+}
+
+.btn-primary {
+  @apply transition-all duration-200
+         hover:-translate-y-0.5 hover:shadow-lg
+         active:translate-y-0 active:shadow-md
+         focus:outline-none focus:ring-2 focus:ring-blue-400/40;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-blob-1,
+  .float-blob-2,
+  .animate-bounce {
+    animation: none !important;
+  }
+}

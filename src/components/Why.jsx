@@ -20,7 +20,7 @@ const features = [
 
 export default function Why() {
   return (
-    <section id="features" className="reveal py-24 bg-gray-50 dark:bg-gray-900">
+    <section id="features" className="scroll-mt-28 reveal py-24 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold mb-4 dark:text-white">

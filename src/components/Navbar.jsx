@@ -13,10 +13,11 @@ export default function Navbar({ theme, setTheme }) {
     if (!target) return
 
     const startY = window.pageYOffset
+    const NAVBAR_HEIGHT = 96
     const targetY =
       target.getBoundingClientRect().top +
       window.pageYOffset -
-      100
+      NAVBAR_HEIGHT
 
     const distance = targetY - startY
     const duration = 700
@@ -44,7 +45,7 @@ export default function Navbar({ theme, setTheme }) {
   }
 
   useEffect(() => {
-    const sections = ['hero', 'features', 'pricing', 'demo']
+    const sections = ['hero', 'features', 'pricing', 'demo'].filter(id => document.getElementById(id))
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -78,7 +79,7 @@ export default function Navbar({ theme, setTheme }) {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${ scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg border-b border-gray-200': 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-md'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${ scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg border-b border-gray-200': 'bg-white/60 dark:bg-gray-900/60 backdrop-blur-md'}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <div
